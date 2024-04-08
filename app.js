@@ -72,7 +72,7 @@ app.get('/players/:playerId/', async (request, response) => {
   const {playerId} = requesr.params
   const getPlayerQuery = `
     SELECT * 
-    FORM cricket_team
+    FROM cricket_team
     WHERE player_id = ${playerId};`
   const player = await db.get(getPlayerQuery)
   response.send(convertDBobjectToResponseObject(player))
